@@ -16,22 +16,22 @@ export function DonationsSection() {
     donatedThisMonth: 0,
     organizations: [
       {
-        name: 'RSPCA',
-        logo: '/rspca-logo.png', // Replace with actual logo
-        description: 'Royal Society for the Prevention of Cruelty to Animals',
+        name: 'International Cat Care',
+        logo: '/images/Charities/icc_logo.avif', // Replace with actual logo
+        description: 'A global organization dedicated to the welfare of cats',
         donationAmount: 0,
-        website: 'https://www.rspca.org.uk'
+        website: 'https://icatcare.org/'
       },
       {
         name: 'Cats Protection',
-        logo: '/cats-protection-logo.png', // Replace with actual logo
+        logo: '/images/Charities/catpro.png', // Replace with actual logo
         description: 'UK\'s leading cat welfare charity',
         donationAmount: 0,
         website: 'https://www.cats.org.uk'
       },
       {
         name: 'Alley Cat Rescue',
-        logo: '/alley-cat-rescue-logo.png', // Replace with actual logo
+        logo: '/images/Charities/allycat.png', // Replace with actual logo
         description: 'Dedicated to the welfare of stray and feral cats',
         donationAmount: 0,
         website: 'https://www.alleycatrescue.org'
@@ -40,8 +40,8 @@ export function DonationsSection() {
   };
 
   return (
-    <section id="donations" className="py-16 md:py-24">
-      <div className="container mx-auto">
+    <section id="donations" className="py-16 md:py-24 relative overflow-hidden">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Cat Charity Impact</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -96,12 +96,16 @@ export function DonationsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {donationData.organizations.map((org, index) => (
             <Card key={index} className="border-border overflow-hidden">
-              <CardHeader className="bg-muted/30 pb-3">
+              <CardHeader className="pb-3">
                 <div className="flex justify-center h-16 items-center mb-2">
                   {/* Placeholder for actual organization logos */}
-                  <div className="bg-muted w-48 h-12 rounded flex items-center justify-center font-semibold">
-                    {org.name}
-                  </div>
+                  <Image
+                    src={org.logo}
+                    alt={org.name}
+                    width={100}
+                    height={100}
+                    className="w-auto h-auto rounded"
+                  />
                 </div>
                 <CardTitle className="text-center">{org.name}</CardTitle>
               </CardHeader>
@@ -132,6 +136,27 @@ export function DonationsSection() {
             Want to contribute directly? Visit our partner organizations and make a donation today!
           </p>
         </div>
+      </div>
+      
+      {/* Background decorations */}
+      <div className="absolute top-0 left-0 size-[400px] rounded-full bg-pink-500/10 blur-3xl -z-10 opacity-20" />
+      <div className="absolute bottom-0 right-0 size-[450px] rounded-full bg-purple-500/10 blur-3xl -z-10 opacity-25" />
+      <div className="absolute top-1/3 right-1/4 size-[350px] rounded-full bg-blue-500/10 blur-3xl -z-10 opacity-20" />
+      
+      {/* Decorative hearts floating in background */}
+      <div className="absolute top-[10%] right-[12%] text-red-400/10 text-4xl transform rotate-[15deg] -z-10">❤️</div>
+      <div className="absolute bottom-[15%] left-[10%] text-red-400/10 text-5xl transform -rotate-[10deg] -z-10">❤️</div>
+      <div className="absolute top-[40%] left-[15%] text-red-400/10 text-3xl transform rotate-[25deg] -z-10">❤️</div>
+      
+      {/* Paw prints scattered around */}
+      <div className="absolute top-[55%] right-[18%] text-pink-500/10 text-4xl transform -rotate-[20deg] -z-10">🐾</div>
+      <div className="absolute bottom-[30%] right-[30%] text-pink-500/10 text-5xl transform rotate-[15deg] -z-10">🐾</div>
+      
+      {/* Cat silhouette */}
+      <div className="absolute bottom-[8%] left-[25%] opacity-5 -z-10 transform scale-150">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,22 C7.581,22 4,18.419 4,14 C4,11.339 5.55389257,8.99879664 7.86151618,7.85401455 L6.62591873,3.43225985 C6.50981237,3.08221104 6.6658795,2.70438094 6.9793522,2.52107897 C7.29282491,2.337777 7.70529401,2.39225386 7.95466296,2.65450695 L11.0303061,5.94975738 C11.3484105,5.94208499 11.6707846,5.93388624 12,5.93388624 C12.3292154,5.93388624 12.6515895,5.94208499 12.9696939,5.94975738 L16.045337,2.65450695 C16.294706,2.39225386 16.7071751,2.337777 17.0206478,2.52107897 C17.3341205,2.70438094 17.4901876,3.08221104 17.3740813,3.43225985 L16.1384838,7.85401455 C18.4461074,8.99879664 20,11.339 20,14 C20,18.419 16.419,22 12,22 Z M9,13 C9.55228475,13 10,12.5522847 10,12 C10,11.4477153 9.55228475,11 9,11 C8.44771525,11 8,11.4477153 8,12 C8,12.5522847 8.44771525,13 9,13 Z M15,13 C15.5522847,13 16,12.5522847 16,12 C16,11.4477153 15.5522847,11 15,11 C14.4477153,11 14,11.4477153 14,12 C14,12.5522847 14.4477153,13 15,13 Z" />
+        </svg>
       </div>
     </section>
   );

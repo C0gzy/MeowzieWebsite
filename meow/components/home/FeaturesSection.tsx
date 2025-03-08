@@ -89,8 +89,8 @@ export function FeaturesSection() {
   ];
   
   return (
-    <section id="features" className="py-16 md:py-24 bg-muted/30">
-      <div className="container mx-auto">
+    <section id="features" className="md:p-0 p-6 py-16 md:py-24 relative overflow-hidden">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Purr-fect Features</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -112,6 +112,21 @@ export function FeaturesSection() {
           ))}
         </div>
       </div>
+      
+      {/* Background decorations */}
+      <div className="absolute top-1/4 right-1/3 size-[350px] rounded-full bg-pink-500/10 blur-3xl -z-10 opacity-30" />
+      <div className="absolute bottom-1/3 left-1/4 size-[400px] rounded-full bg-blue-500/10 blur-3xl -z-10 opacity-20" />
+      
+      {/* Decorative cat ears at the top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] -z-10 opacity-10">
+        <div className="absolute left-0 top-0 w-[80px] h-[80px] rounded-full bg-pink-500/30 transform -rotate-45"></div>
+        <div className="absolute right-0 top-0 w-[80px] h-[80px] rounded-full bg-pink-500/30 transform rotate-45"></div>
+      </div>
+      
+      {/* Cat paw prints */}
+      <div className="absolute bottom-[10%] right-[10%] text-pink-500/10 text-5xl transform -rotate-[15deg] -z-10">🐾</div>
+      <div className="absolute top-[15%] left-[8%] text-pink-500/10 text-4xl transform rotate-[25deg] -z-10">🐾</div>
+    
     </section>
   );
 }

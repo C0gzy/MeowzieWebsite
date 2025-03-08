@@ -46,7 +46,7 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 md:p-0 p-6 overflow-hidden">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
@@ -148,6 +148,25 @@ export function HeroSection() {
       {/* Background decorations */}
       <div className="absolute top-0 left-0 -translate-x-1/2 translate-y-1/4 size-[500px] rounded-full bg-pink-500/20 blur-3xl -z-10 opacity-50" />
       <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/2 size-[400px] rounded-full bg-pink-500/20 blur-3xl -z-10 opacity-40" />
+      <div className="absolute top-1/4 right-1/4 size-[300px] rounded-full bg-blue-500/10 blur-3xl -z-10 opacity-30" />
+      <div className="absolute bottom-1/4 left-1/4 size-[250px] rounded-full bg-purple-500/15 blur-3xl -z-10 opacity-25" />
+      
+      {/* Cat paw prints scattered across the background */}
+      <div className="absolute top-[40%] right-[15%] text-pink-500/20 text-4xl transform -rotate-[15deg] -z-10">🐾</div>
+      <div className="absolute bottom-[20%] left-[25%] text-pink-500/20 text-6xl transform rotate-[40deg] -z-10">🐾</div>
+      <div className="absolute top-[60%] right-[30%] text-pink-500/20 text-5xl transform -rotate-[30deg] -z-10">🐾</div>
+
+      {/* Small cat silhouettes in the background */}
+      <div className="absolute top-[25%] right-[5%] opacity-10 -z-10">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,22 C7.581,22 4,18.419 4,14 C4,11.339 5.55389257,8.99879664 7.86151618,7.85401455 L6.62591873,3.43225985 C6.50981237,3.08221104 6.6658795,2.70438094 6.9793522,2.52107897 C7.29282491,2.337777 7.70529401,2.39225386 7.95466296,2.65450695 L11.0303061,5.94975738 C11.3484105,5.94208499 11.6707846,5.93388624 12,5.93388624 C12.3292154,5.93388624 12.6515895,5.94208499 12.9696939,5.94975738 L16.045337,2.65450695 C16.294706,2.39225386 16.7071751,2.337777 17.0206478,2.52107897 C17.3341205,2.70438094 17.4901876,3.08221104 17.3740813,3.43225985 L16.1384838,7.85401455 C18.4461074,8.99879664 20,11.339 20,14 C20,18.419 16.419,22 12,22 Z M9,13 C9.55228475,13 10,12.5522847 10,12 C10,11.4477153 9.55228475,11 9,11 C8.44771525,11 8,11.4477153 8,12 C8,12.5522847 8.44771525,13 9,13 Z M15,13 C15.5522847,13 16,12.5522847 16,12 C16,11.4477153 15.5522847,11 15,11 C14.4477153,11 14,11.4477153 14,12 C14,12.5522847 14.4477153,13 15,13 Z" />
+        </svg>
+      </div>
+      <div className="absolute bottom-[10%] left-[8%] opacity-10 -z-10 transform rotate-[15deg]">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,22 C7.581,22 4,18.419 4,14 C4,11.339 5.55389257,8.99879664 7.86151618,7.85401455 L6.62591873,3.43225985 C6.50981237,3.08221104 6.6658795,2.70438094 6.9793522,2.52107897 C7.29282491,2.337777 7.70529401,2.39225386 7.95466296,2.65450695 L11.0303061,5.94975738 C11.3484105,5.94208499 11.6707846,5.93388624 12,5.93388624 C12.3292154,5.93388624 12.6515895,5.94208499 12.9696939,5.94975738 L16.045337,2.65450695 C16.294706,2.39225386 16.7071751,2.337777 17.0206478,2.52107897 C17.3341205,2.70438094 17.4901876,3.08221104 17.3740813,3.43225985 L16.1384838,7.85401455 C18.4461074,8.99879664 20,11.339 20,14 C20,18.419 16.419,22 12,22 Z M9,13 C9.55228475,13 10,12.5522847 10,12 C10,11.4477153 9.55228475,11 9,11 C8.44771525,11 8,11.4477153 8,12 C8,12.5522847 8.44771525,13 9,13 Z M15,13 C15.5522847,13 16,12.5522847 16,12 C16,11.4477153 15.5522847,11 15,11 C14.4477153,11 14,11.4477153 14,12 C14,12.5522847 14.4477153,13 15,13 Z" />
+        </svg>
+      </div>
     </section>
   );
 }
@@ -199,9 +218,7 @@ function VideoOrFallback({ src }: { src: string }) {
       <div className="w-full h-full flex items-center justify-center bg-zinc-900">
         <div className="text-white/20 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="size-12 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" />
-            <path d="M12 16.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
-            <path d="M12 13V9" />
+            <path d="M12,22 C7.581,22 4,18.419 4,14 C4,11.339 5.55389257,8.99879664 7.86151618,7.85401455 L6.62591873,3.43225985 C6.50981237,3.08221104 6.6658795,2.70438094 6.9793522,2.52107897 C7.29282491,2.337777 7.70529401,2.39225386 7.95466296,2.65450695 L11.0303061,5.94975738 C11.3484105,5.94208499 11.6707846,5.93388624 12,5.93388624 C12.3292154,5.93388624 12.6515895,5.94208499 12.9696939,5.94975738 L16.045337,2.65450695 C16.294706,2.39225386 16.7071751,2.337777 17.0206478,2.52107897 C17.3341205,2.70438094 17.4901876,3.08221104 17.3740813,3.43225985 L16.1384838,7.85401455 C18.4461074,8.99879664 20,11.339 20,14 C20,18.419 16.419,22 12,22 Z M9,13 C9.55228475,13 10,12.5522847 10,12 C10,11.4477153 9.55228475,11 9,11 C8.44771525,11 8,11.4477153 8,12 C8,12.5522847 8.44771525,13 9,13 Z M15,13 C15.5522847,13 16,12.5522847 16,12 C16,11.4477153 15.5522847,11 15,11 C14.4477153,11 14,11.4477153 14,12 C14,12.5522847 14.4477153,13 15,13 Z" />
           </svg>
           <p className="text-xs">Video not found</p>
         </div>

@@ -7,7 +7,7 @@ import Link from 'next/link';
  */
 export function Footer() {
   return (
-    <footer className="bg-muted/30 border-t border-border py-12">
+    <footer className="bg-muted/30 border-t md:p-0 p-6 border-border py-12">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -63,8 +63,8 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-4">Our Partners</h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://www.rspca.org.uk" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-                  RSPCA
+                <a href="https://www.icatcare.org/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  International Cat Care
                 </a>
               </li>
               <li>
