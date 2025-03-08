@@ -40,7 +40,7 @@ export function DonationsSection() {
   };
 
   return (
-    <section id="donations" className="py-16 md:py-24 relative overflow-hidden">
+    <section id="donations" className="py-16 md:py-24 p-6 relative overflow-hidden">
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Cat Charity Impact</h2>

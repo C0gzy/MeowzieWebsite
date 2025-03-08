@@ -65,11 +65,12 @@ export function HeroSection() {
                   Try Web App
                 </Link>
               </Button>
-              <Button variant="outline" size="lg">
+              {/* <Button variant="outline" size="lg">
                 Download App
-              </Button>
+              </Button> */}
             </div>
             
+            {/*
             <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
@@ -78,6 +79,7 @@ export function HeroSection() {
               </div>
               <p>Joined by 100k+ cat lovers</p>
             </div>
+            */}
           </div>
           
           {/* Right side - App interface mockup with vertical scrolling video carousel */}

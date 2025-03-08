@@ -62,5 +62,23 @@ All data is stored on a secure server and is only accessible to the founders of 
 We have big plans for meowzie in the coming months, including new features, partnerships with cat food brands, and exclusive content from cat influencers. Stay tuned for more updates!
     `,
     tags: ['Announcement', 'Product Launch', 'Social Media']
+  },
+  {
+    slug: 'web-app',
+    title: 'Why dont we have a mobile app?',
+    author: 'Thomas Cogzell',
+    date: '2025-03-01',
+    readTime: 2,
+    coverImage: 'https://cdn.pixabay.com/photo/2024/02/28/07/42/european-shorthair-8601492_640.jpg',
+    excerpt: 'Why dont we have a mobile app? Due to the Cost of running a mobile app right now we only have a web app.',
+    content: `
+# Why do we only have a web APP
+Right now due to the cost of running a mobile app, we have only a web app. We plan to release a mobile app in the future.
+When we gather enough intrest in the app we hope to release a mobile build of the app to all users. It will function the same as the web app but will be optimized for mobile use.
+
+When we release the mobile app we will release it for both android and ios. We will ask for beta testers first to fix any bugs and ensure the app is stable. before we release it to the public.
+
+    `,
+    tags: ['Announcement', 'Product Launch', 'Social Media']
   }
 ];

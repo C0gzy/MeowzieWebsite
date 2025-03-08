@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 /**
  * Header component for the meowzie website
@@ -23,7 +24,8 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border py-3">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="md:ml-0 ml-4 flex items-center gap-2">
-          <span className="font-bold text-2xl">😺 meowzie</span>
+          <Image src={require("/public/Logo.svg")} alt="meowzie logo" width={40} height={40} />
+          <span className="font-bold text-2xl">meowzie</span>
         </Link>
         
         {/* Desktop Navigation */}
@@ -46,7 +48,7 @@ export function Header() {
               Open Web App
             </Link>
           </Button>
-          <Button size="sm">Download App</Button>
+          {/* <Button size="sm">Download App</Button> */}
         </div>
 
         {/* Mobile Navigation */}
@@ -99,9 +101,9 @@ export function Header() {
                       Open Web App
                     </Link>
                   </Button>
-                  <Button variant="outline" className="w-full" onClick={() => setIsOpen(false)}>
+                  {/* <Button variant="outline" className="w-full" onClick={() => setIsOpen(false)}>
                     Download App
-                  </Button>
+                  </Button> */}
                 </div>
                 
                 <div className="border-t border-border p-4 bg-muted/20">

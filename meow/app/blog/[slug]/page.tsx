@@ -11,11 +11,12 @@ type BlogPostParams = { slug: string };
 /**
  * Dynamic blog post page component that displays the full content of a blog post
  */
-export default function BlogPostPage({ 
+export default async function BlogPostPage({ 
   params 
 }: { 
   params: BlogPostParams 
 }) {
+  // In Next.js 15, we need to handle params correctly in async components
   // Find the blog post with the matching slug
   const post = blogPosts.find((post) => post.slug === params.slug);
   

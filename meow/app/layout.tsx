@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "meowzie - TikTok for Cats",
-  description: "meowzie is a TikTok-like app made especially for cat content. Share your feline friend's best moments with the world!",
+  title: "meowzie",
+  description: "meowzie is a Social app made especially for cat content. Share your feline friend's best moments with the world!",
   keywords: ["cats", "pet social media", "cat videos", "tiktok for cats", "meowzie"],
 };
 

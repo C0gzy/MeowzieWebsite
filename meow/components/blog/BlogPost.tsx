@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,6 +17,44 @@ interface BlogPostProps {
  * BlogPost component for displaying the full content of a blog post
  */
 export function BlogPost({ post }: BlogPostProps) {
+  
+  const handleShare = (platform: 'twitter' | 'facebook' | 'linkedin' | 'copy') => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    const title = post.title;
+    const text = post.excerpt;
+
+    switch (platform) {
+      case 'twitter':
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+          '_blank'
+        );
+        break;
+      case 'facebook':
+        window.open(
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+          '_blank'
+        );
+        break;
+      case 'linkedin':
+        window.open(
+          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+          '_blank'
+        );
+        break;
+      case 'copy':
+        navigator.clipboard.writeText(url).then(() => {
+          alert('Link copied to clipboard!');
+        }).catch(err => {
+          console.error('Could not copy link: ', err);
+        });
+        break;
+      default:
+        break;
+    }
+  };
+
+
   return (
     <article className="pt-32 pb-16 md:pt-40 md:pb-24">
       <div className="container mx-auto">
@@ -75,41 +115,76 @@ export function BlogPost({ post }: BlogPostProps) {
           <div className="prose prose-lg dark:prose-invert mx-auto">
             {renderMarkdown(post.content)}
           </div>
+        
           
           {/* Share and Navigation */}
           <div className="mt-12 pt-8 border-t border-border">
-            <div className="flex flex-wrap justify-between items-center">
+            <div className="flex flex-wrap justify-between gap-4">
               <div>
-                <h3 className="text-lg font-medium mb-2">Share this post</h3>
+                <p className="text-sm font-medium mb-3">Share this post</p>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="size-10 p-0 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="rounded-full" 
+                    onClick={() => handleShare('twitter')}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                     </svg>
                     <span className="sr-only">Share on Twitter</span>
                   </Button>
-                  <Button variant="outline" size="sm" className="size-10 p-0 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="rounded-full"
+                    onClick={() => handleShare('facebook')}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                     </svg>
                     <span className="sr-only">Share on Facebook</span>
                   </Button>
-                  <Button variant="outline" size="sm" className="size-10 p-0 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
-                      <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="rounded-full"
+                    onClick={() => handleShare('linkedin')}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                      <rect width="4" height="12" x="2" y="9" />
+                      <circle cx="4" cy="4" r="2" />
                     </svg>
-                    <span className="sr-only">Share on Instagram</span>
+                    <span className="sr-only">Share on LinkedIn</span>
+                  </Button>
+                  <Button 
+                    size="icon" 
+                    variant="outline" 
+                    className="rounded-full"
+                    onClick={() => handleShare('copy')}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                    </svg>
+                    <span className="sr-only">Copy link</span>
                   </Button>
                 </div>
               </div>
-              
-              <Button asChild>
-                <Link href="/blog">Read more articles</Link>
+              <Button variant="outline" asChild>
+                <Link href="/blog">
+                  <svg className="mr-2 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
+                  Back to Blog
+                </Link>
               </Button>
             </div>
           </div>
+      
           
-          {/* Related Posts - Would normally be dynamic based on tags */}
+          {/* Related Posts - Would normally be dynamic based on tags 
           <div className="mt-16">
             <h3 className="text-2xl font-bold mb-6">Related Posts</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -137,7 +212,9 @@ export function BlogPost({ post }: BlogPostProps) {
               ))}
             </div>
           </div>
-        </div>
+          */}
+         </div>
+
       </div>
     </article>
   );
@@ -177,6 +254,10 @@ function renderMarkdown(content: string) {
     }
     if (line.startsWith('### ')) {
       return <h3 key={index} className="text-xl font-bold mt-5 mb-2">{line.slice(4)}</h3>;
+    }
+
+    if (line.startsWith('**')) {
+      return <p key={index} className="font-bold">{line.slice(2)}</p>;
     }
     
     // Lists
