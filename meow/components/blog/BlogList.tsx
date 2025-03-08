@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import { BlogPostData, blogPosts } from './blog-data';
+import { BlogPostData, blogPosts } from '@/components/blog/blog-data';
 
 /**
  * BlogList component
@@ -11,7 +11,7 @@ import { BlogPostData, blogPosts } from './blog-data';
 export function BlogList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {blogPosts.map((post) => (
+      {blogPosts.map((post: BlogPostData) => (
         <BlogPostCard key={post.slug} post={post} />
       ))}
     </div>
