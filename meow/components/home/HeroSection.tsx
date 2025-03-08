@@ -61,7 +61,7 @@ export function HeroSection() {
             
             <div className="flex flex-wrap gap-4 pt-4">
               <Button size="lg" asChild>
-                <Link href="https://meowzie.online" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.meowzie.online" target="_blank" rel="noopener noreferrer">
                   Try Web App
                 </Link>
               </Button>

@@ -44,7 +44,7 @@ export function Header() {
         {/* Desktop CTA Buttons */}
         <div className="hidden md:flex items-center gap-3">
           <Button variant="outline" size="sm" asChild>
-            <Link href="https://meowzie.online" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.meowzie.online" target="_blank" rel="noopener noreferrer">
               Open Web App
             </Link>
           </Button>
@@ -54,7 +54,7 @@ export function Header() {
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center gap-2">
           <Button variant="outline" size="icon" className="rounded-full size-9" asChild>
-            <Link href="https://meowzie.online" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.meowzie.online" target="_blank" rel="noopener noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                 <polyline points="15 3 21 3 21 9" />
@@ -97,7 +97,7 @@ export function Header() {
                 
                 <div className="border-t border-border p-4">
                   <Button className="w-full mb-2" asChild>
-                    <Link href="https://app.meowzie.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                    <Link href="https://www.meowzie.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                       Open Web App
                     </Link>
                   </Button>
