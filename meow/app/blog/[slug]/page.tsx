@@ -5,19 +5,17 @@ import { Footer } from '@/components/layout/Footer';
 import { BlogPost } from '@/components/blog/BlogPost';
 import { blogPosts } from '@/components/blog/blog-data';
 
-/**
- * Types for the page props
- */
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
+// Define the params type with the correct TypeScript for Next.js 15+
+type BlogPostParams = { slug: string };
 
 /**
  * Dynamic blog post page component that displays the full content of a blog post
  */
-export default function BlogPostPage({ params }: BlogPostPageProps) {
+export default function BlogPostPage({ 
+  params 
+}: { 
+  params: BlogPostParams 
+}) {
   // Find the blog post with the matching slug
   const post = blogPosts.find((post) => post.slug === params.slug);
   
@@ -40,7 +38,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 /**
  * Generate static params for all blog posts to optimize performance
  */
-export function generateStaticParams() {
+export async function generateStaticParams(): Promise<BlogPostParams[]> {
   return blogPosts.map((post) => ({
     slug: post.slug,
   }));
