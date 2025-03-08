@@ -132,12 +132,15 @@ export function DonationsSection() {
         
         {/* Additional Information */}
         <div className="mt-16 text-center">
-          <p className="text-muted-foreground">
-            Want to contribute directly? Visit our partner organizations and make a donation today!
+          <p className='text-muted-foreground'>
+            Want to support us?
           </p>
           <Link href="https://ko-fi.com/meowzie" target="_blank" rel="noopener noreferrer" className="text-sm text-pink-600 hover:underline">
             Support Meowzie
           </Link>
+          <p className="text-muted-foreground">
+            Or want to contribute directly? Visit our partner organizations and make a donation today!
+          </p>
         </div>
       </div>
       

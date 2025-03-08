@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { FeaturesSection } from "@/components/home/FeaturesSection";
 import { DonationsSection } from "@/components/home/DonationsSection";
+import { Analytics } from "@vercel/analytics/react"
 
 /**
  * Main homepage for meowzie website
@@ -19,6 +20,7 @@ export default function Home() {
         <DonationsSection />
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 }

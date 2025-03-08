@@ -228,6 +228,18 @@ function VideoOrFallback({ src }: { src: string }) {
     );
   }
   
+  // Determine video type based on file extension
+  const getVideoType = (filePath: string) => {
+    const extension = filePath.split('.').pop()?.toLowerCase();
+    switch (extension) {
+      case 'webp':
+        return 'image/webp';
+      case 'mp4':
+      default:
+        return 'video/mp4';
+    }
+  };
+
   return (
     <video
       ref={videoRef}
@@ -236,7 +248,7 @@ function VideoOrFallback({ src }: { src: string }) {
       playsInline
       loop
     >
-      <source src={src} type="video/mp4" />
+      <source src={src} type={getVideoType(src)} />
     </video>
   );
 }
